@@ -1,0 +1,13 @@
+alter table home_policy add constraint home foreign key (pno) references policy (pno);
+alter table public_policy add constraint pub foreign key (pno) references policy (pno);
+alter table car_policy add constraint car foreign key (pno) references policy (pno);
+alter table helth_policy add constraint health foreign key (pno) references policy (pno);
+alter table color add constraint color foreign key (pno) references policy (pno);
+alter table type add constraint type foreign key (pno) references policy (pno);
+alter table policy add constraint policy_c foreign key (cus_num) references customer (cus_num);
+alter table payment add constraint payment_c foreign key (cus_num) references customer (cus_num);
+alter table damage add constraint damage_c foreign key (cus_num) references customer (cus_num);
+alter table sub_insured add constraint sub_c foreign key (cus_num) references customer (cus_num);
+alter table customer add constraint customer_a foreign key (agent_id) references agent (agent_id);
+alter table agent add constraint agent_s foreign key (section_num) references section (section_num);
+alter table damage_type add constraint damage_d foreign key (report_num) references damage (report_num);
